@@ -43,6 +43,9 @@ export class CountryWiseComponent implements OnInit {
   deathChart = []
   recoveredChart = []
   confirmedChart = []
+  todayConfirmed = 0
+  todayRecovered = 0
+  todayDeaths =0
   dateValue = []
   @ViewChild("chart") chart: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
@@ -90,7 +93,10 @@ export class CountryWiseComponent implements OnInit {
       chart: {
         height: 350,
         type: "line",
-        stacked: false
+        stacked: true,
+        toolbar: {
+          show: false
+        }
       },
       stroke: {
         width: [0, 2, 5],
@@ -127,7 +133,7 @@ export class CountryWiseComponent implements OnInit {
         min: 0
       },
       tooltip: {
-        shared: true,
+        shared: false,
         intersect: false,
         y: {
           formatter: function (y) {
@@ -157,7 +163,11 @@ export class CountryWiseComponent implements OnInit {
     this.dataService.getCountriesDateWise(con).subscribe((dateWise) => {
       this.dateWiseData = (dateWise['data']['timeline'])
       var totalCountryData = dateWise['data']['latest_data']
+      var todayCountryData = dateWise['data']['today']
       this.country = dateWise['data'].name
+      this.todayConfirmed = todayCountryData.confirmed
+      this.todayRecovered = todayCountryData.recovered
+      this.todayDeaths = todayCountryData.deaths
       this.totalConfirmed = totalCountryData.confirmed;
       this.totalCritical = totalCountryData.critical;
       this.totalDeaths = totalCountryData.deaths;
