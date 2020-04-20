@@ -50,23 +50,29 @@ maindata = []
     this.dataService.getCountries().subscribe((data) => {
       this.totalCountryData = data['data'];
       this.totalCountryData.forEach((cs) => {
-        this.countries.push(cs.name)
+        let tst ={}
+        tst['name'] = cs.name;
+        tst['code'] = cs.code;
+        this.countries.push(tst)
         if(cs.latest_data.confirmed > 5000){
         this.data.push([cs.updated_at.substring(0,10), cs.latest_data.confirmed]) 
         }
       })
-      console.log("coun",this.data)
-      this.updateValues(this.totalCountryData[0].name)
+      // console.log("coun",this.countries)
+      this.updateValues( this.totalCountryData[0].name)
     })
   }
   updateValues(con) {
+    console.log("con", con.target.value)
+    // this.dataService.getCountriesDateWise(con).subscribe((dateWise)=>{
+    //   console.log(dateWise);
+    // })
     this.totalCountryData.forEach((cs)=>{
-      if(cs.name == con){
+      if(cs.code == con.target.value){
         this.totalConfirmed = cs.latest_data.confirmed;
         this.totalCritical = cs.latest_data.critical;
         this.totalDeaths = cs.latest_data.deaths;
         this.totalRecovered = cs.latest_data.recovered;
-        
       }
     })
   }

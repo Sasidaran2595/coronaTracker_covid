@@ -23,7 +23,8 @@ import { NgApexchartsModule } from "ng-apexcharts";
     AppRoutingModule,
     HighchartsChartModule,
     HttpClientModule,
-    NgApexchartsModule
+    NgApexchartsModule,
+    GoogleChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

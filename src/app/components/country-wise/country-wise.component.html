@@ -53,12 +53,14 @@
 
 <div class="form-group col-lg-5 mx-auto">
     <label for="c">Select Country</label>
-    <select name="" class="form-control" id="c" #input (change)='updateValues(input.value)'>
-        <option value="{{con}}" *ngFor='let con of countries'>{{con}}</option>
+    <select name="" class="form-control" id="c" #input (change)='updateValues($event)'>
+        <ng-container *ngFor = "let con of countries">
+            <option [value]="con.code">{{con.name}}</option>
+        </ng-container>
     </select>
 </div>
 
-<!-- <div class="row">
+<div class="row">
     <div class="col">
         <google-chart #chart
    [title]="title"
@@ -109,4 +111,4 @@
 </google-chart>
 
     </div>
-</div> -->
+</div>

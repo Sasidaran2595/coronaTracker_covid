@@ -29,6 +29,14 @@ export class CountryService {
 
   }
 
+  getCountriesDateWise(con){
+    return this.http.get(this.globalDataUrl + "/" ).pipe(
+      map((res) => {
+        return res
+      })
+    )
+  }
+
 
 
 }
