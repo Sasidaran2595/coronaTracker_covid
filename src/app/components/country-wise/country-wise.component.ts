@@ -45,7 +45,7 @@ export class CountryWiseComponent implements OnInit {
   confirmedChart = []
   todayConfirmed = 0
   todayRecovered = 0
-  todayDeaths =0
+  todayDeaths = 0
   dateValue = []
   @ViewChild("chart") chart: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
@@ -93,7 +93,7 @@ export class CountryWiseComponent implements OnInit {
       chart: {
         height: 350,
         type: "line",
-        stacked: true,
+        stacked: false,
         toolbar: {
           show: false
         }
@@ -133,7 +133,7 @@ export class CountryWiseComponent implements OnInit {
         min: 0
       },
       tooltip: {
-        shared: false,
+        shared: true,
         intersect: false,
         y: {
           formatter: function (y) {

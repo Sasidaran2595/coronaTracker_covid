@@ -240,8 +240,8 @@ export class WorldWideComponent implements OnInit {
       },
       yaxis: {
         min: this.minimum,
-        max:this.maximum,
-        opposite:true
+        max: this.maximum,
+        opposite: true
       }
     };
 
@@ -267,9 +267,9 @@ export class WorldWideComponent implements OnInit {
         labels: {
           minWidth: 40
         },
-        min:this.minimum,
-        max:this.maximum,
-        opposite:true
+        min: this.minimum,
+        max: this.maximum,
+        opposite: true
       }
     };
 
@@ -295,9 +295,9 @@ export class WorldWideComponent implements OnInit {
         labels: {
           minWidth: 40
         },
-        min:this.minimum,
-        max:this.maximum,
-        opposite:true
+        min: this.minimum,
+        max: this.maximum,
+        opposite: true
       }
     };
 
@@ -317,7 +317,7 @@ export class WorldWideComponent implements OnInit {
         group: "social",
         type: "area",
         height: 200,
-        width:300,
+        width: 300,
         toolbar: {
           show: false
         }
@@ -328,9 +328,9 @@ export class WorldWideComponent implements OnInit {
         labels: {
           minWidth: 40
         },
-        min:this.minimum,
-        max:this.maximum,
-        opposite:true
+        min: this.minimum,
+        max: this.maximum,
+        opposite: true
       }
     };
 
@@ -442,13 +442,13 @@ export class WorldWideComponent implements OnInit {
     }
 
     // console.log(_.minBy(this.dailyTotalRecovered, (data) => data[1]));
-    
+
     this.minimum = _.min([_.minBy(this.dailyTotalConfirmed, (data) => data[1])[1],
     _.minBy(this.dailyTotalRecovered, (data) => data[1])[1],
     _.minBy(this.dailyTotalDeaths, (data) => data[1])[1]]);
 
     // console.log(this.minimum);
-    
+
     this.maximum = _.max([_.maxBy(this.dailyTotalConfirmed, (data) => data[1])[1],
     _.maxBy(this.dailyTotalRecovered, (data) => data[1])[1],
     _.maxBy(this.dailyTotalDeaths, (data) => data[1])[1]]);

@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row pt-4 center_items">
     <div class="col-12">
-      <span style="font-size: 31px !important;font-weight: 500;position: relative;left: 235px;">Coronavirus (COVID-19) Statistics (Global)</span>
+      <span style="font-size: 31px !important;font-weight: 500;position: relative;left: 235px;">Coronavirus (COVID-19)
+        Statistics (Global)</span>
     </div>
     <div>
       <div class="card">
@@ -55,22 +56,6 @@
     </div>
   </div>
   <div class="row pt-3 center_items">
-    <!-- <div id="chart">
-      <apx-chart
-        [series]="linechartOptions.series"
-        [chart]="linechartOptions.chart"
-        [xaxis]="linechartOptions.xaxis"
-        [stroke]="linechartOptions.stroke"
-        [colors]="linechartOptions.colors"
-        [dataLabels]="linechartOptions.dataLabels"
-        [legend]="linechartOptions.legend"
-        [markers]="linechartOptions.markers"
-        [grid]="linechartOptions.grid"
-        [yaxis]="linechartOptions.yaxis"
-        [title]="linechartOptions.title"
-      ></apx-chart>
-    </div> -->
-
     <div class="col-4">
       <apx-chart [series]="chart1options.series" [chart]="chart1options.chart" [colors]="chart1options.colors"
         [yaxis]="chart1options.yaxis" [dataLabels]="commonOptions.dataLabels" [markers]="commonOptions.markers"
@@ -96,8 +81,9 @@
   </div>
   <div class="row pt-4 center_items">
     <div class="col-12">
-      <span style="font-size: 31px !important;font-weight: 500;position: relative;left: 300px;">Today's Statistics (Global)</span>
-      <span style="position: relative;left: 334px;">as of {{dailyData[0]['updated_at']}}</span>
+      <span style="font-size: 31px !important;font-weight: 500;position: relative;left: 300px;">Today's Statistics
+        (Global)</span>
+      <span style="position: relative;left: 300px;">as of {{dailyData[0]['updated_at']}}</span>
     </div>
     <div>
       <div class="card">
